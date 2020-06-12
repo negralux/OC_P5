@@ -1,0 +1,381 @@
+/*styles.css - OPENCLASSROOMS PARCOURS 5 - Philippe ABEILHOU - 09/06/2020*/
+html {
+  background-color: rgb(93, 34, 96);
+  color: white;  }
+
+body {
+  width: 98%;
+  margin: auto;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(93, 34, 96); }
+
+header {
+  text-align: center;
+  padding: 1%;
+  background-color: rgb(255, 0, 166);
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 2rem; }
+
+nav {
+  text-align: center;
+  margin-bottom: 2%;
+  margin-top: 2%; }
+
+
+button {
+  border: 2px solid white;
+  border-radius: 6px;
+  margin: 2%;
+  width: 180px;
+  height: 60px;
+  font-size: 1.3em;
+  background-color: rgb(255, 0, 166);
+  color:white; }
+  
+  button :hover {
+    cursor: pointer; }
+  
+  button a {
+    text-decoration: none;
+    color: white;
+    display: block; }
+ 
+  button :hover {
+    cursor: pointer; }
+
+#containerNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.divNav:nth-child(1) {
+  display: flex;
+  flex-basis: 50%; }
+
+.containerArticle a {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-bottom: 2%;
+  border: 2px solid white;
+  background-color: rgb(143, 18, 168);
+  text-decoration: none;
+  color: white; }
+
+.containerArticlePageProduit {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-bottom: 2%;
+  border: 2px solid white;
+  background-color: rgb(143, 18, 168);
+  text-decoration: none;
+  color: white }
+
+.elementContainerArticle {
+  display: flex; }
+
+.elementContainerArticle:nth-child(1) {
+  flex-basis: 30%; }
+
+.elementContainerArticle:nth-child(1) img {
+  width: 100%; }
+
+.elementContainerArticle:nth-child(2) {
+  flex-basis: 70%; }
+
+.contentDescriptionArticle {
+  padding: 2%;
+  text-align: justify; }
+
+h2 {
+  text-align: center; }
+
+h1 {
+  text-align: center; }
+
+.divPrix {
+  margin-top: 2%;
+  text-align: right; }
+
+#selectOptionProduit {
+  text-align: center;
+  margin-top: 4%; }
+
+.boutonSubmitProduit {
+  margin-top: 2%;
+  box-shadow: 0 0 0 0;
+  margin-left: 2%; }
+
+footer {
+  text-align: center;
+  margin-top: 6%;
+  margin-bottom: 2%;
+  font-size: 3em;
+  font-family: 'Luckiest Guy', cursive; }
+
+#textFlashMessage {
+  width: 30%;
+  margin: auto;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bolder;
+  padding: 1%;
+  border: 2px solid white;
+  background-color: rgb(247, 192, 10);
+  margin-bottom: 2%; }
+
+#resultatsPanier {
+  margin-bottom: 2%; }
+
+.ContenairePanier {
+  width: 98%;
+  margin: auto;
+  margin-bottom: 2%; }
+
+.contenaireLignePanier {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 2px solid white;
+  background-color: rgb(143, 18, 168); }
+
+.element-lignePanier {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column; }
+
+.element-lignePanier:nth-child(1) {
+  width: 30%;
+  padding: 1%;
+  order: 1; }
+
+.element-lignePanier:nth-child(1) img {
+  width: 98%;
+  border: 1px solid white; }
+
+.element-lignePanier:nth-child(2) {
+  width: 18%;
+  padding: 1%;
+  text-align: center;
+  order: 2; }
+
+.element-lignePanier:nth-child(3) {
+  flex-basis: 75%;
+  padding: 1%;
+  text-align: justify;
+  order: 6; }
+
+.element-lignePanier:nth-child(4) {
+  padding: 1%;
+  width: 14%;
+  text-align: center;
+  order: 3; }
+
+.element-lignePanier:nth-child(5) {
+  width: 8%;
+  text-align: center;
+  padding: 1%;
+  order: 4; }
+
+.element-lignePanier:nth-child(6) {
+  flex-basis: 18%;
+  text-align: center;
+  padding: 1%;
+  order: 5; }
+
+.element-lignePanier:nth-child(7) {
+  width: 20%;
+  padding: 1%;
+  order: 7;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center; }
+
+.sousElement-lignePanier {
+  display: flex; }
+
+.decoInputContact :focus :invalid {
+  box-shadow: 2px 2px 0 0  rgb(143, 18, 168);
+  box-shadow: 0 0 2px 2px  rgb(143, 18, 168); }
+
+.boutonPanierQuantite {
+  border: 2px solid white;
+  width:60px;
+  border-radius: 5px;
+  margin: 2%;
+  background-color: rgb(255, 0, 166);
+  height: 3em; }
+
+  .boutonPanierQuantite :hover {
+    cursor: pointer; }
+
+  .boutonPanierQuantite :hover {
+    cursor: pointer; }
+
+#totauxPanier {
+  width: 90%;
+  margin: auto;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 0.9em; }
+
+.messagePanierVide,
+.messageConfirmationCommande {
+  font-weight: bolder;
+  text-align: center;
+  font-size: 1.2em; }
+
+.messagePanierVide a {
+  text-decoration: none;
+  color: white;
+  transition: 400ms; }
+
+.messagePanierVide a:hover {
+  color: rgb(255, 0, 166); }
+
+.fas,
+.fas {
+  color:  white;
+  font-size: 2em;
+  margin-top: 2%;
+  transition-duration: 400ms; }
+
+.fas:hover {
+  color: rgb(255, 0, 166); 
+  font-size: 2em;
+  cursor: pointer; }
+
+fieldset {
+  margin-bottom: 20%;
+  border: 2px solid white;
+  color: white;
+  background-color: rgb(143, 18, 168); }
+
+legend {
+  font-weight: bolder; }
+
+#idFormContact {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+  margin-top: 2%; }
+
+#idFormContact label {
+  margin-left: 2%; }
+
+.element-form {
+  display: flex;
+  margin-bottom: 2%; }
+
+#inputContact {
+  width: 100%;
+  text-align: center;
+  margin-top: 2%; }
+
+.element-form:nth-child(1),
+.element-form:nth-child(3),
+.element-form:nth-child(5),
+.element-form:nth-child(7),
+.element-form:nth-child(9),
+.element-form:nth-child(11) {
+  font-weight: bolder;
+  flex-basis: 20%; }
+
+.element-form:nth-child(2),
+.element-form:nth-child(4),
+.element-form:nth-child(6),
+.element-form:nth-child(8),
+.element-form:nth-child(10),
+.element-form:nth-child(12) {
+  font-weight: bolder;
+  flex-basis: 80%; }
+
+#nom {
+  width: 150%; }
+
+#adresse {
+  width: 150%; }
+
+#email {
+  width: 150%; }
+
+#important {
+  color: rgb(247, 192, 10);
+  font-size: 0.8em; }
+
+/* SM (smartphones et tablettes jusqu'à 600px) */
+@media only screen and (min-width: 600px) {
+  
+  body {
+    width: 90%;
+    margin: auto; }
+  
+  footer {
+    font-size: 2rem; }
+  
+  .element-lignePanier:nth-child(1) {
+    order: 1; }
+  
+  .element-lignePanier:nth-child(2) {
+    order: 2; }
+  
+  .element-lignePanier:nth-child(3) {
+    order: 6;
+    flex-basis: 78%; }
+  
+  .element-lignePanier:nth-child(4) {
+    order: 3; }
+  
+  .element-lignePanier:nth-child(5) {
+    order: 4; }
+  
+  .element-lignePanier:nth-child(6) {
+    order: 7; }
+  
+  .element-lignePanier:nth-child(7) {
+    order: 5; }
+  
+  #totauxPanier {
+    font-size: 1em; }
+  
+  #textFlashMessage {
+    width: 22%; } }
+
+/* MD (tablettes landscape,portables et desktop supérieurs à 768px) */
+@media only screen and (min-width: 768px) {
+  
+  #idFormContact {
+    width: 80%; }
+  
+  #textFlashMessage {
+    width: 20%; } }
+
+/* LG (portables et desktop supérieurs à 992px) */
+@media only screen and (min-width: 992px) {
+  
+  body {
+    width: 70%;
+    margin: auto; }
+  
+  #idFormContact {
+    width: 70%; }
+  
+  footer {
+    font-size: 2em; } }
+
+/* XL (portables et desktop supérieurs à 1200px) */
+@media only screen and (min-width: 1200px) {
+  
+  body {
+    width: 70%;
+    margin: auto; } }
+
+/*styles.css - OPENCLASSROOMS PARCOURS 5 - Philippe ABEILHOU - 09/06/2020*/
