@@ -44,7 +44,7 @@
                 }
 /*MODIFICATION DES QUANTITÉS POSSIBLES*/
                 var selectOptionsQuantite = "";
-                for (y = 1; y < 11; y++) {
+                for (y = 1; y < 6; y++) {
                     selectOptionsQuantite += '<option value="' + y + '">' + y + '</option>';
                 }
 /*FIN*/
