@@ -3,7 +3,7 @@
         document.getElementById("header").innerHTML = contenuHeader;
 /*FIN*/
 
-/*MESSAGE PANIER*/
+/*MESSAGE ACTION*/
 
         affichageMessageAction(); // Message de confimation d'une action
 
