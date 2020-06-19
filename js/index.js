@@ -12,7 +12,7 @@
         document.getElementById("resultats").innerHTML = "";
 
     /*On peut changer de catalogue "manuellement"*/
-        var catalogue = "cameras"; // Opions de catalogue : cameras, teddies, furniture
+        var catalogue = "cameras"; // Options de catalogue : cameras, teddies, furniture
 
 
     /*Récupération du contenu du catalogue (promise)*/
