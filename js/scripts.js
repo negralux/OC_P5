@@ -6,8 +6,8 @@ if (localStorage.getItem("panier") === null) {
 
 /*FIN*/
 
-/*FONCTION CALCUL TOTAL DES ARTICLES DU PANIER*/
-var functionCalculArticlesDuPanier = function () {
+/*FONCTION CALCUL DU NOMBRE D'ARTICLES TOTAL DANS LE PANIER*/
+function functionCalculArticlesDuPanier (panier) {
     var paniers = JSON.parse(localStorage.getItem("panier")); //Recupere le panier en local 
     var quantite = 0;
     for (let x in paniers) {
@@ -19,24 +19,22 @@ var functionCalculArticlesDuPanier = function () {
 /*FIN*/
 
 /*FONCTION CALCUL PRIX TOTAL DU PANIER*/
-var functionCalculPrixTotalDuPanier = function () {
+function functionCalculPrixTotalDuPanier (panier) {
     var paniers = JSON.parse(localStorage.getItem("panier")); //Recupere le panier en local 
-    var tableauDeContageDesPrix = [];
+    var tableauDeComptageDesPrix = [];
     for (let x in paniers) {
         var lignePanier = paniers[x];
-        tableauDeContageDesPrix.push(lignePanier.prixAjour);
+        tableauDeComptageDesPrix.push(lignePanier.prixAjour);
     }
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    const prixTotalDuPanier = tableauDeContageDesPrix.reduce(reducer);
+    const prixTotalDuPanier = tableauDeComptageDesPrix.reduce(reducer);
 
     return prixTotalDuPanier;
 }
 /*FIN*/
 
-
-
 /*AFFICHAGE DU MENU HEADER DES PAGES DU SITE*/
-var fonctionAffichageHeader = function () {
+function fonctionAffichageHeader (panier) {
     let contenuHeader = null;
     if (localStorage.getItem("panier") === "vide") { // panier vide
         contenuHeader = '<button class="bouton"><a href="index.html">Notre catalogue</a></button><button class="bouton"><a href="panier.html" title="0.00€">Panier (0 article)</a></button>';
@@ -58,19 +56,18 @@ var fonctionAffichageHeader = function () {
 
 /*FIN*/
 
-
 /*FONCTION AFFICHAGE EN EURO*/
 function transformPrice(price) {
     let price_string = price.toString();
     let partie_euro = price_string.slice(0, price_string.length - 2);
     let partie_centimes = price_string.slice(price_string.length - 2, price_string.length);
-    let affichage = partie_euro + "." + partie_centimes;
+    let affichage = partie_euro + "." + partie_centimes + "€";
     return affichage;
 }
 /*FIN*/
 
 /*MESSAGE FLASH UTILISATEUR*/
-var affichageMessageAction = function () {
+function affichageMessageAction (vide) {
     let message = localStorage.messagePanier;
     if (message != "vide") {
         let affichageMessageAction = '<div id="textFlashMessage">' + message + '</div>';
@@ -101,7 +98,7 @@ var connect = function(url){
 /*FIN*/
 
 /*FONCTION AJOUTER DANS LE PANIER*/
-var fonctionSubmitProduit = function () {
+function fonctionSubmitProduit (produit) {
 
     // recupere les donnees du formulaire
     const Id = document.getElementById('id').value; //recupere catalogue
