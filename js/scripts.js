@@ -100,18 +100,18 @@ var connect = function(url){
 /*FONCTION AJOUTER DANS LE PANIER*/
 function fonctionSubmitProduit (produit) {
 
-    // recupere les donnees du formulaire
+    // recupere les donnees du formulaire, déclare les constantes 
     const Id = document.getElementById('id').value; //recupere catalogue
-    const option = document.getElementById('option').value; // recupere produit
-    const quantite = document.getElementById('quantite').value; // recupere produit
+    const option = document.getElementById('option').value; // recupere l'option de lentille
+    const quantite = document.getElementById('quantite').value; // recupere quantité produit
     const catalogue = document.getElementById('catalogue').value; // recupere produit
-    const retourUrl = document.getElementById('urlRetour').value; // recupere produit
+    const retourUrl = document.getElementById('urlRetour').value; // recupere url
     const name = document.getElementById('name').value; // recupere nom du produit
-    const prixUnitaire = document.getElementById('prix').value; // recupere nom du produit
-    const urlImage = document.getElementById('urlImage').value; // recupere nom du produit
-    const description = document.getElementById('description').value; // recupere nom du produit
+    const prixUnitaire = document.getElementById('prix').value; // recupere prix du produit
+    const urlImage = document.getElementById('urlImage').value; // recupere url de l'image du produit
+    const description = document.getElementById('description').value; // recupere  description du produit
 
-    //création d'une class pour creer ligne produit:
+    //création d'un objet, class pour construire une ligne produit dans le panier:
     class ligneDuPanier {
         constructor(reference, nom, quantite, option, prixUnitaire, prixAjour, catalogue, urlImage, description) {
             this.reference = Id;
@@ -125,14 +125,15 @@ function fonctionSubmitProduit (produit) {
             this.description = description
         }
     }
+    // Calcul le prix si plus que 1 dans le panier  
+    var prixAjour = prixUnitaire * quantite; 
 
-    var prixAjour = prixUnitaire * quantite; // Calcul le prix si plus que 1 dans le panier
-    //tri du panier
+    // Tri du panier
     if (localStorage.getItem("panier") === "vide") { //si panier d'origine car initialisation à null on ecrit directement dans le panier
         const ligne = new ligneDuPanier(Id, name, quantite, option, prixUnitaire, prixAjour, catalogue, urlImage, description);
         var Panier = [];
-        Panier.push(ligne); // mis dans un tableau pour panier
-        localStorage.messagePanier = "Produit ajouté";
+        Panier.push(ligne); //mis dans un tableau pour panier
+        localStorage.messagePanier = "Produit ajouté"; //Envoi d'un message à l'utilisateur
         localStorage.setItem("panier", JSON.stringify(Panier));
         window.location.href = retourUrl; //Retour à la page du produit
     } else { //Mettre dans panier
@@ -160,14 +161,14 @@ function fonctionSubmitProduit (produit) {
         localStorage.setItem("panier", JSON.stringify(data));
         window.location.href = retourUrl; // on revient à la page du produit    
 
-    } //fin du else panier non vide
-    return false;
+    } 
+    return false; //fin du else panier non vide
 }
 /*FIN*/
 
 /* GESTION DU PANIER*////////////////
 
-/*SUPPRIMER UN PRODUIT*/
+/*SUPPRIMER PRODUIT*/
 let fonctionDelete = function (a) { // supprime un produit du panier
     var data = JSON.parse(localStorage.getItem("panier")); // on recupere le panier en local
     if (data.length == 1) { //supprime le dernier produit
@@ -177,8 +178,8 @@ let fonctionDelete = function (a) { // supprime un produit du panier
         window.location.href = "panier.html"; //Retour à la page d'acceuil */ 
     } else {
         localStorage.messagePanier = "Produit supprimé !"; //Message utilisateur
-        data.splice(a, 1); //Supprime l'objet correspondant
-        localStorage.setItem("panier", JSON.stringify(data));//Sauvegarde du panier mis à jour
+        data.splice(a, 1); //Supprime l'objet correspondant méthode splice() modifie le contenu dU tableau
+        localStorage.setItem("panier", JSON.stringify(data));//Sauvegarde du panier mis à jour - JS > JSON
         window.location.href = "panier.html"; //Retour à la page d'acceuil */ 
     }
 }
