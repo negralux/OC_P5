@@ -12,7 +12,7 @@
 /*PANIER*/
 
         if (JSON.parse(localStorage.getItem("panier") === "vide")) { //Panier vide 
- /*MESSAGE PANIER*/
+
 
             affichageMessageAction(); // Message de confimation d'une action
 
@@ -21,11 +21,11 @@
                 '<div class="messagePanierVide">'+
                     '<p>Le panier est vide </p>'+
                     '<p><a href="index.html"> Retour au catalogue </a></p>'+
-                '</div>';
+                '</div>';//panier vide dans index et Message
             document.getElementById("contactPanier").innerHTML = 
                 '<article class="messagePanierVide">'+
                     '<a href="index.html"><i class="fas fa-camera-retro"></i></a>'+
-                '</article>';
+                '</article>';//retour vers catalogue
 
 
         } else { // panier NON vide
@@ -43,7 +43,7 @@
                     signeMoinsPanier = '<div class="sousElement-lignePanier"><button class="boutonPanierQuantite" onclick="fonctionDelete(' + x + ')"><i class="fas fa-trash-alt"></i></button></div>';
                 }
 
-                // creation ligne produit
+                // creationligne produit
                 let ligne =
                     '<article class="ContenairePanier">'+
                         '<div class="contenaireLignePanier">'+

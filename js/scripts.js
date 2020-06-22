@@ -129,10 +129,10 @@ function fonctionSubmitProduit (produit) {
     var prixAjour = prixUnitaire * quantite; 
 
     // Tri du panier
-    if (localStorage.getItem("panier") === "vide") { //si panier d'origine car initialisation à null on ecrit directement dans le panier
+    if (localStorage.getItem("panier") === "vide") { //si panier vide d'origine car initialisation à null on ecrit directement dans le panier
         const ligne = new ligneDuPanier(Id, name, quantite, option, prixUnitaire, prixAjour, catalogue, urlImage, description);
         var Panier = [];
-        Panier.push(ligne); //mis dans un tableau pour panier
+        Panier.push(ligne); //mis en dernier dans un tableau pour panier
         localStorage.messagePanier = "Produit ajouté"; //Envoi d'un message à l'utilisateur
         localStorage.setItem("panier", JSON.stringify(Panier));
         window.location.href = retourUrl; //Retour à la page du produit
@@ -178,7 +178,7 @@ let fonctionDelete = function (a) { // supprime un produit du panier
         window.location.href = "panier.html"; //Retour à la page d'acceuil */ 
     } else {
         localStorage.messagePanier = "Produit supprimé !"; //Message utilisateur
-        data.splice(a, 1); //Supprime l'objet correspondant méthode splice() modifie le contenu dU tableau
+        data.splice(a, 1); //Supprime l'objet correspondant méthode splice() modifie le contenu du tableau
         localStorage.setItem("panier", JSON.stringify(data));//Sauvegarde du panier mis à jour - JS > JSON
         window.location.href = "panier.html"; //Retour à la page d'acceuil */ 
     }
@@ -243,11 +243,11 @@ var fonctionClearPanier = function () {
 
 var fonctionSubmitContact = function () {
     const prenom = document.getElementById('prenom').value; //recupere prenom
-    const nom = document.getElementById('nom').value; //recupere catalogue 
-    const mail = document.getElementById('email').value; //recupere catalogue
-    const ville = document.getElementById('ville').value; //recupere catalogue  
-    const adresse = document.getElementById('adresse').value; //recupere catalogue  
-    const codePostal = document.getElementById('codePostal').value; //recupere catalogue
+    const nom = document.getElementById('nom').value; //recupere nom 
+    const mail = document.getElementById('email').value; //recupere email
+    const ville = document.getElementById('ville').value; //recupere ville 
+    const adresse = document.getElementById('adresse').value; //recupere adresse  
+    const codePostal = document.getElementById('codePostal').value; //recupere codepostal
 
     /*format pour l'envoi*/
     class formatToSend {

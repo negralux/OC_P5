@@ -5,11 +5,11 @@
 
 /*MESSAGE ACTION*/
 
-        affichageMessageAction(); // Message de confimation d'une action
+        affichageMessageAction(); // Message de confimation d'une action utilisateur
 /*FIN*/
          
     /*Nettoyage du div si non vide*/
-        document.getElementById("resultats").innerHTML = "";
+        document.getElementById("resultats").innerHTML = "";//remise à zéro du catalogue
 
     /*On peut changer de catalogue "manuellement"*/
         var catalogue = "cameras"; // Options de catalogue : cameras, teddies, furniture
@@ -23,7 +23,6 @@
 
                     for (var i = 0; i < objets.length; i++) {
                         var objet = objets[i];
-
 
                         var article =
                         '<article class="containerArticle">'+
@@ -43,10 +42,10 @@
                     }
             })
             .catch(function(error){
-                console.log(error) //Erreur si echec
+                console.log(error) //Erreur si echec de connexion au localhost:3000
             })
 
-/*SWITCH TITRE DE LA PAGE EN FONCTION DE var catalogue= line 15  */
+/*SWITCH TITRE DE LA PAGE EN FONCTION DU CATALOGUE CHOISI*/
         var contenuH1 = "";
         switch (catalogue) {
             case "teddies":

@@ -42,12 +42,13 @@
                 for (let x in options) {
                     selectOptions += '<option value="' + options[x] + '">' + options[x] + '</option>';
                 }
-/*MODIFICATION DES QUANTITÉS POSSIBLES*/
+                /*MODIFICATION DES QUANTITÉS POSSIBLES*/
                 var selectOptionsQuantite = "";
                 for (y = 1; y < 6; y++) {
                     selectOptionsQuantite += '<option value="' + y + '">' + y + '</option>';
                 }
-/*FIN*/
+
+                /*creation du bloc article à insérer dans produit.html liste déroulante quantité:65 / options:66  + submit line 75*/
 
                 let article = 
                     '<article class="containerArticlePageProduit">'+
@@ -58,7 +59,7 @@
                             '<div class="contentDescriptionArticle">'+
                                 '<h2>' + reponse.name + '</h2>'+
                                 '<div class="textDescription">' + reponse.description + '</div>'+
-                                '<div class="divPrix">Prix: ' + transformPrice(reponse.price) + ' Euro</div>'+
+                                '<div class="divPrix">Prix: ' + transformPrice(reponse.price) + '</div>'+
                                 '<div id="selectOptionProduit">'+
                                         '<form onsubmit="return fonctionSubmitProduit()" id="FormProduit">'+
                                             '<label>Quantité: </label><label><select name="quantite" id="quantite">' + selectOptionsQuantite + '</select></label>'+
@@ -79,7 +80,7 @@
                     '</article>';
 
 
-                /*AFFICHAGE DES DÉTAILS DE L'ARTICLE*/
+                 /*AFFICHAGE DES DÉTAILS DE L'ARTICLE*/
                 let Resultats = document.getElementById("resultats"); //affichage dans id > resultats
                 Resultats.innerHTML = article;
             })
